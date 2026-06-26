@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    image: prathamesh45/boardgitlab:latest
+    container_name: boardgitlab-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+      # Add any other environment variables your app needs
+      # - DB_HOST=your-db-host
+      # - DB_PORT=5432
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  app-network:
+    driver: bridge
