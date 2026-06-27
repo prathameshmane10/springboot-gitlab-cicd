@@ -19,7 +19,7 @@ The primary objective of this project is to simulate a real-world DevOps workflo
 > **CI/CD Pipeline Architecture**
 
 <p align="center">
-<img src="architecture/architecture.png" width="100%">
+<img src="architecture/architecture" width="100%">
 </p>
 
 ---
